@@ -1,0 +1,15 @@
+
+{{isProdctAvbl}}
+<p [ngStyle]="{backgroundColor : isProdctAvbl ? 'hotpink' : '#ccc'}"
+   [ngClass]="{'text-danger' : PrcdNotavl,
+               'text-dark' : isProdctAvbl }" >
+    Lorem ipsum dolor sit amet {{ProdctName}} consectetur adipisicing elit. Corrupti, hic animi earum assumenda ex {{ProdctId}} ipsum adipisci repellat eligendi ea voluptatibus, reiciendis magni vero.
+    <strong *ngIf="isProdctAvbl; else PrcdNotavl">Product is Avilable..</strong>
+    <!-- <strong *ngIf="!isProdctAvbl">Product is Not Avilable</strong> -->
+
+    <ng-template #PrcdNotavl>
+        <strong>Product is Out of Stock..</strong>
+    </ng-template>
+</p>
+
+

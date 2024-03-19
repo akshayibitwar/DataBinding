@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-4" *ngFor="let mobile of mobileArray">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="imgContainer">
+                            <img [src]="mobile.Image" *ngIf="mobile.Image" alt="img" class="image-fluid" title="mob">
+                            
+                            <p class="NoImg m-0 d-flex justify-content-center align-items-center" *ngIf="!mobile.Image">
+                                No Preview Available
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="details">
+                            {{mobile.Company}}
+                            {{mobile.Model}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

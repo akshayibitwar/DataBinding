@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <hr>
+    <input type="text" 
+    [(ngModel)]="SearchbyValue"
+    class="form-control mb-4">
+    <div class="col-md-8 offset-2 ">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr class="case-capitalize">
+                    <th>Sr. No</th>
+                    <th>Name</th>
+                    <th>Jno</th>
+                    <th>Nick Name</th>
+                    <th>Team</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr *ngFor="let player of playersArray | filterPlayrs : SearchbyValue; index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{player.Name}}</td>
+                    <td>{{player.JNo}}</td>
+                    <td>{{player.NickName}}</td>
+                    <td>{{player.Team}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

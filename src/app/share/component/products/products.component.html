@@ -1,0 +1,38 @@
+<!-- I have {{ProdctName}} phone which is id is {{PrdId}} -->
+
+
+<button class="btn btn-primary mt-4 mb-4" 
+[disabled]="isDisable"
+(click)="onBtnClick()">
+    Add Products
+</button>
+
+<button class="btn btn-danger ml-4"
+(click)="onRemovePrdct()"
+[disabled]="Cartcount === 0"
+>Remove Product</button>
+
+<p class="alert alert-info" [innerText]="ProdStatus"
+>
+</p>
+
+<input type="text " class="form-control mb-4" (keyup)="onProductStatus($event)">
+
+<ul class="list-group my-2" *ngFor="let skill of skills">
+    <li class="list-group-item bg-warning">I Love {{skill}}</li>
+</ul>
+<hr>
+<ul class="list-group " *ngFor="let skill of skills">
+    <li class="list-group-item bg-danger">I Love {{skill}}</li>
+</ul>
+
+<input type="text" class="form-control mt-4"
+[(ngModel)]="ProdctSearch"
+>
+
+<p class="alert alert-danger"
+ [innerHTML]="ProdctSearch"
+ >
+</p>
+
+
